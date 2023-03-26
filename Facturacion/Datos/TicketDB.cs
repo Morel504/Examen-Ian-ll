@@ -1,7 +1,5 @@
 ﻿using Entidades;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Datos
@@ -9,82 +7,45 @@ namespace Datos
     public class TicketDB
     {
         string cadena = "server=localhost; user=root; database=factura2; password=123456;";
-
-        public bool Guardar(Ticket ticket, List<DetalleTicket> detalles)
+        public bool GuardarTickett(Ticket tickett)
         {
             bool inserto = false;
-            int idFactura = 0;
             try
             {
-                StringBuilder sqlTicket = new StringBuilder();
-                sqlTicket.Append(" INSERT INTO ticket (Id, Fecha, IdentidadCliente, CodigoUsuario, TipoSoporte, DescripcionSolicitud, RespuestaSolicitud, Precio, ISV, Descuento, Total) VALUES (@Id, @Fecha, @IdentidadCliente, @CodigoUsuario, @TipoSoporte, @DescripcionSolicitud, @RespuestaSolicitud, @Precio, @ISV, @Descuento, @Total); ");
-                sqlTicket.Append(" SELECT LAST_INSERT_ID(); ");
+                StringBuilder sql = new StringBuilder();
+                sql.Append("INSERT TNTO ickat (Fecha, IdentidadCliente, CodigoUsuario, TipoSoporte, DescripcionSolicitud, RespuestaSolicitud, Precio, ISV, Descuento, Total) VALUES (@Fecha, @IdentidadCliente, @CodigoUsuario, @TipoSaporte, @DescripcionSolicitud, @RespuestaSolicitud, @Precio, @ISV, @Descuento, @Total; ");
+                sql.Append("SELECT LAST_INSERT_ID();");
 
-                StringBuilder sqlDetalle = new StringBuilder();
-                sqlDetalle.Append(" INSERT INTO detalleticket (Id, Fecha, IdentidadCliente, CodigoUsuario, TipoSoporte, DescripcionSolicitud, RespuestaSolicitud, Precio, ISV, Descuento, Total) VALUES (@Id, @Fecha, @IdentidadCliente, @CodigoUsuario, @TipoSoporte, @DescripcionSolicitud, @RespuestaSolicitud, @Precio, @ISV, @Descuento, @Total); ");
-
-
-                using (MySqlConnection con = new MySqlConnection(cadena))
+                using (MySqlConnection _conexion = new MySqlConnection(cadena))
                 {
-                    con.Open();
-
-                    MySqlTransaction transaction = con.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
-
-                    try
+                    _conexion.Open();
+                    using (MySqlCommand comando = new MySqlCommand(sql.ToString(), _conexion))
                     {
-                        using (MySqlCommand cmd1 = new MySqlCommand(sqlTicket.ToString(), con, transaction))
-                        {
-                            cmd1.CommandType = System.Data.CommandType.Text;
-                            cmd1.Parameters.Add("@Id", MySqlDbType.Int32).Value = ticket.Id;
-                            cmd1.Parameters.Add("@Fecha", MySqlDbType.DateTime).Value = ticket.Fecha;
-                            cmd1.Parameters.Add("@IdentidadCliente", MySqlDbType.VarChar, 25).Value = ticket.IdentidadCliente;
-                            cmd1.Parameters.Add("@CodigoUsuario", MySqlDbType.VarChar, 50).Value = ticket.CodigoUsuario;
-                            cmd1.Parameters.Add("@TipoSoporte", MySqlDbType.VarChar, 100).Value = ticket.TipoSporte;
-                            cmd1.Parameters.Add("@DescripcionSolicitud", MySqlDbType.VarChar, 100).Value = ticket.DescripcionSolicitud;
-                            cmd1.Parameters.Add("@RespuestaSolicitud", MySqlDbType.VarChar, 100).Value = ticket.RespuestaSolicitud;
-                            cmd1.Parameters.Add("@Precio", MySqlDbType.Decimal).Value = ticket.Precio;
-                            cmd1.Parameters.Add("@ISV", MySqlDbType.Decimal).Value = ticket.ISV;
-                            cmd1.Parameters.Add("@Descuento", MySqlDbType.Decimal).Value = ticket.Descuento;
-                            cmd1.Parameters.Add("@Total", MySqlDbType.Decimal).Value = ticket.Total;
-                            idFactura = Convert.ToInt32(cmd1.ExecuteScalar());
-                        }
-
-                        foreach (DetalleTicket detalle in detalles)
-                        {
-                            using (MySqlCommand cmd2 = new MySqlCommand(sqlDetalle.ToString(), con, transaction))
-                            {
-                                cmd2.Parameters.Add("@Id", MySqlDbType.Int32).Value = ticket.Id;
-                                cmd2.Parameters.Add("@Fecha", MySqlDbType.DateTime).Value = ticket.Fecha;
-                                cmd2.Parameters.Add("@IdentidadCliente", MySqlDbType.VarChar, 25).Value = ticket.IdentidadCliente;
-                                cmd2.Parameters.Add("@CodigoUsuario", MySqlDbType.VarChar, 50).Value = ticket.CodigoUsuario;
-                                cmd2.Parameters.Add("@TipoSoporte", MySqlDbType.VarChar, 100).Value = ticket.TipoSporte;
-                                cmd2.Parameters.Add("@DescripcionSolicitud", MySqlDbType.VarChar, 100).Value = ticket.DescripcionSolicitud;
-                                cmd2.Parameters.Add("@RespuestaSolicitud", MySqlDbType.VarChar, 100).Value = ticket.RespuestaSolicitud;
-                                cmd2.Parameters.Add("@Precio", MySqlDbType.Decimal).Value = ticket.Precio;
-                                cmd2.Parameters.Add("@ISV", MySqlDbType.Decimal).Value = ticket.ISV;
-                                cmd2.Parameters.Add("@Descuento", MySqlDbType.Decimal).Value = ticket.Descuento;
-                                cmd2.Parameters.Add("@Total", MySqlDbType.Decimal).Value = ticket.Total;
-                                idFactura = Convert.ToInt32(cmd2.ExecuteScalar());
-                            }
-
-                        }
-
-                        transaction.Commit();
-                        inserto = true;
-                    }
-                    catch (System.Exception)
-                    {
-                        inserto = false;
-                        transaction.Rollback();
+                        comando.CommandType = System.Data.CommandType.Text;
+                        comando.Parameters.Add("@Fecha", MySqlDbType.Datetime).Value = tickett.Fecha;
+                        comando.Parameters.Add("@IdentidadCliente", MySqlDbType.VarChar, 25).Value = tickett.IdentidadCliente;
+                        comando.Parameters.Add("@CodigoUsuario", MySqlDbType.VarChar, 50).Value = tickett.CodigoUsuario;
+                        comando.Parameters.Add("@TipoSoporte", MySqlDbType.VarChar, 30).Value = tickett.TipoSoporte;
+                        comando.Parameters.Add("@DescripcionSolicitud", MySqlDbType.VarChar, 100).Value = tickett.DescripcionSolicitud;
+                        comando.Parameters.Add("@RespuestaSolicitud", MySqlDbType.VarChar, 100).Value = tickett.RespuestaSolicitud;
+                        comando.Parameters.Add("@Precio", MySqlDbType.Decimal).Value = tickett.Precio;
+                        comando.Parameters.Add("@ISV", MySqlDbType.Decimal).Value = tickett.ISV;
+                        comando.Parameters.Add("@Descuento", MySqlDbType.Decimal).Value = tickett.Descuento;
+                        comando.Parameters.Add("@Total", MySqlDbType.Decimal).Value = tickett.Total;
                     }
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
             }
             return inserto;
+
         }
 
 
     }
 }
+
+
+
+

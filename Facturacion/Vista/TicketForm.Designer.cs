@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FacturaForm
+    partial class TicketForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturaForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,12 +52,14 @@
             this.TipoSoporteComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.DescripcionSolicitudRichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.RespuestaSolicitudRichTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ImpuestoTextBox = new System.Windows.Forms.TextBox();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -124,7 +126,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 62);
+            this.label8.Location = new System.Drawing.Point(19, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 16);
             this.label8.TabIndex = 12;
@@ -133,7 +135,7 @@
             // DescuentoTextBox
             // 
             this.DescuentoTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.DescuentoTextBox.Location = new System.Drawing.Point(102, 24);
+            this.DescuentoTextBox.Location = new System.Drawing.Point(99, 72);
             this.DescuentoTextBox.Name = "DescuentoTextBox";
             this.DescuentoTextBox.Size = new System.Drawing.Size(157, 22);
             this.DescuentoTextBox.TabIndex = 17;
@@ -141,7 +143,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 27);
+            this.label10.Location = new System.Drawing.Point(18, 75);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 16);
             this.label10.TabIndex = 16;
@@ -150,7 +152,7 @@
             // TotalTextBox
             // 
             this.TotalTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.TotalTextBox.Location = new System.Drawing.Point(111, 168);
+            this.TotalTextBox.Location = new System.Drawing.Point(111, 211);
             this.TotalTextBox.Name = "TotalTextBox";
             this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(154, 22);
@@ -159,7 +161,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 171);
+            this.label11.Location = new System.Drawing.Point(13, 214);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 16);
             this.label11.TabIndex = 18;
@@ -245,7 +247,7 @@
             // PrecioTextBox
             // 
             this.PrecioTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.PrecioTextBox.Location = new System.Drawing.Point(102, 62);
+            this.PrecioTextBox.Location = new System.Drawing.Point(99, 34);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(157, 22);
             this.PrecioTextBox.TabIndex = 23;
@@ -254,7 +256,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(135, 105);
+            this.button1.Location = new System.Drawing.Point(126, 153);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 34);
             this.button1.TabIndex = 24;
@@ -299,7 +301,7 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox4.Controls.Add(this.richTextBox1);
+            this.groupBox4.Controls.Add(this.DescripcionSolicitudRichTextBox1);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Location = new System.Drawing.Point(12, 319);
             this.groupBox4.Name = "groupBox4";
@@ -308,15 +310,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Descripción";
             // 
-            // richTextBox1
+            // DescripcionSolicitudRichTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(228, 21);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(495, 42);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.DescripcionSolicitudRichTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.DescripcionSolicitudRichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DescripcionSolicitudRichTextBox1.Location = new System.Drawing.Point(228, 21);
+            this.DescripcionSolicitudRichTextBox1.Name = "DescripcionSolicitudRichTextBox1";
+            this.DescripcionSolicitudRichTextBox1.Size = new System.Drawing.Size(495, 42);
+            this.DescripcionSolicitudRichTextBox1.TabIndex = 1;
+            this.DescripcionSolicitudRichTextBox1.Text = "";
             // 
             // label5
             // 
@@ -330,7 +332,7 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox5.Controls.Add(this.richTextBox2);
+            this.groupBox5.Controls.Add(this.RespuestaSolicitudRichTextBox2);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Location = new System.Drawing.Point(12, 440);
             this.groupBox5.Name = "groupBox5";
@@ -339,15 +341,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Respuesta";
             // 
-            // richTextBox2
+            // RespuestaSolicitudRichTextBox2
             // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(228, 21);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(495, 48);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
+            this.RespuestaSolicitudRichTextBox2.BackColor = System.Drawing.SystemColors.Info;
+            this.RespuestaSolicitudRichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RespuestaSolicitudRichTextBox2.Location = new System.Drawing.Point(228, 21);
+            this.RespuestaSolicitudRichTextBox2.Name = "RespuestaSolicitudRichTextBox2";
+            this.RespuestaSolicitudRichTextBox2.Size = new System.Drawing.Size(495, 48);
+            this.RespuestaSolicitudRichTextBox2.TabIndex = 1;
+            this.RespuestaSolicitudRichTextBox2.Text = "";
             // 
             // label6
             // 
@@ -361,6 +363,8 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.ImpuestoTextBox);
             this.groupBox6.Controls.Add(this.PrecioTextBox);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label10);
@@ -368,12 +372,29 @@
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.TotalTextBox);
-            this.groupBox6.Location = new System.Drawing.Point(803, 246);
+            this.groupBox6.Location = new System.Drawing.Point(803, 226);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(298, 206);
+            this.groupBox6.Size = new System.Drawing.Size(298, 250);
             this.groupBox6.TabIndex = 28;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Detalles";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 117);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 16);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "ISV:";
+            // 
+            // ImpuestoTextBox
+            // 
+            this.ImpuestoTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.ImpuestoTextBox.Location = new System.Drawing.Point(99, 111);
+            this.ImpuestoTextBox.Name = "ImpuestoTextBox";
+            this.ImpuestoTextBox.Size = new System.Drawing.Size(157, 22);
+            this.ImpuestoTextBox.TabIndex = 26;
             // 
             // GuardarButton
             // 
@@ -420,12 +441,12 @@
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
             // 
-            // FacturaForm
+            // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1131, 539);
+            this.ClientSize = new System.Drawing.Size(1122, 542);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
@@ -439,7 +460,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FacturaForm";
+            this.Name = "TicketForm";
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.FacturaForm_Load);
             this.groupBox1.ResumeLayout(false);
@@ -486,14 +507,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox TipoSoporteComboBox;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox DescripcionSolicitudRichTextBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox RespuestaSolicitudRichTextBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox ImpuestoTextBox;
     }
 }

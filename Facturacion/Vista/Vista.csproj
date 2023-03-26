@@ -84,11 +84,11 @@
     <Compile Include="BuscarClienteForm.Designer.cs">
       <DependentUpon>BuscarClienteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FacturaForm.cs">
+    <Compile Include="TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacturaForm.Designer.cs">
-      <DependentUpon>FacturaForm.cs</DependentUpon>
+    <Compile Include="TicketForm.Designer.cs">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -107,8 +107,8 @@
     <EmbeddedResource Include="BuscarClienteForm.resx">
       <DependentUpon>BuscarClienteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FacturaForm.resx">
-      <DependentUpon>FacturaForm.cs</DependentUpon>
+    <EmbeddedResource Include="TicketForm.resx">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

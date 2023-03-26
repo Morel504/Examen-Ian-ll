@@ -8,7 +8,7 @@ namespace Entidades
         public DateTime Fecha { get; set; }
         public string IdentidadCliente { get; set; }
         public string CodigoUsuario { get; set; }
-        public string TipoSporte { get; set; }
+        public string TipoSoporte { get; set; }
         public string DescripcionSolicitud { get; set; }
         public string RespuestaSolicitud { get; set; }
         public string Precio { get; set; }
@@ -26,7 +26,7 @@ namespace Entidades
             Fecha = fecha;
             IdentidadCliente = identidadCliente;
             CodigoUsuario = codigoUsuario;
-            TipoSporte = tipoSoporte;
+            TipoSoporte = tipoSoporte;
             DescripcionSolicitud = descripcionSolicitud;
             RespuestaSolicitud = respuestaSolicitud;
             Precio = precio;

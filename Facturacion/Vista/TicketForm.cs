@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FacturaForm : Form
+    public partial class TicketForm : Form
     {
-        public FacturaForm()
+        public TicketForm()
         {
             InitializeComponent();
         }
@@ -18,7 +18,8 @@ namespace Vista
         List<DetalleTicket> listaDetalles = new List<DetalleTicket>();
         TicketDB facturaDB = new TicketDB();
         decimal precio = 0;
-        decimal isv = 010;
+        decimal isv = 0;
+        decimal isv2 = 0;
         decimal totalAPagar = 0;
         decimal descuento = 0;
 
@@ -32,22 +33,31 @@ namespace Vista
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Ticket miTicket = new Ticket();
-            miTicket.Fecha = FechaDateTimePicker.Value;
+
             miTicket.CodigoUsuario = System.Threading.Thread.CurrentPrincipal.Identity.Name;
+            miTicket.IdentidadCliente = IdentidadTextBox.Text;
+            miTicket.Fecha = FechaDateTimePicker.Value;
+            miTicket.TipoSoporte = TipoSoporteComboBox.Text;
+            miTicket.DescripcionSolicitud = DescripcionSolicitudRichTextBox1.Text;
+            miTicket.RespuestaSolicitud = RespuestaSolicitudRichTextBox2.Text;
+            miTicket.Precio = PrecioTextBox.Text;
             miTicket.ISV = isv;
             miTicket.Descuento = descuento;
             miTicket.Total = totalAPagar;
 
-            bool inserto = facturaDB.Guardar(miTicket, listaDetalles);
+            //bool insertar = TicketDB.GuardarTickett(miTicket);
 
-            if (inserto)
-            {
-                LimpiarControles();
-                IdentidadTextBox.Focus();
-                MessageBox.Show("Factura registrada exitosamente");
-            }
-            else
-                MessageBox.Show("No se pudo registrar la factura");
+            //if (insertar)
+            //{
+            //    LimpiarControles();
+            //    MessageBox.Show("Ticket Guardado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No se Guardó", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+
+
         }
 
         private void LimpiarControles()
@@ -74,17 +84,21 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            precio = Convert.ToInt32(PrecioTextBox.Text);
-            descuento = Convert.ToInt32(DescuentoTextBox.Text);
+            precio = Convert.ToDecimal(PrecioTextBox.Text);
+            descuento = Convert.ToDecimal(DescuentoTextBox.Text);
+            isv = Convert.ToDecimal(ImpuestoTextBox.Text);
             Calculo();
         }
 
 
         private void Calculo()
         {
+            isv2 = isv / 100;
             totalAPagar = precio - descuento;
+            totalAPagar = totalAPagar - isv2;
             TotalTextBox.Text = Convert.ToString(totalAPagar);
         }
+
 
     }
 }
