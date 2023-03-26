@@ -20,7 +20,7 @@ namespace Vista
 
         private void NuevaFacturaToolStripButton_Click(object sender, EventArgs e)
         {
-            FacturaForm facturaForm = new FacturaForm();
+            TicketForm facturaForm = new TicketForm();
             facturaForm.MdiParent = this;
             facturaForm.Show();
         }

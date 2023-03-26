@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturaForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.GuardarButton = new System.Windows.Forms.Button();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,23 +58,31 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.groupBox1.Controls.Add(this.FechaDateTimePicker);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.UsuarioTextBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 35);
+            this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1065, 55);
+            this.groupBox1.Size = new System.Drawing.Size(1062, 55);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -97,7 +105,7 @@
             // 
             // UsuarioTextBox
             // 
-            this.UsuarioTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.UsuarioTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.UsuarioTextBox.Location = new System.Drawing.Point(106, 21);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.ReadOnly = true;
@@ -124,9 +132,10 @@
             // 
             // DescuentoTextBox
             // 
-            this.DescuentoTextBox.Location = new System.Drawing.Point(117, 24);
+            this.DescuentoTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.DescuentoTextBox.Location = new System.Drawing.Point(102, 24);
             this.DescuentoTextBox.Name = "DescuentoTextBox";
-            this.DescuentoTextBox.Size = new System.Drawing.Size(142, 22);
+            this.DescuentoTextBox.Size = new System.Drawing.Size(157, 22);
             this.DescuentoTextBox.TabIndex = 17;
             // 
             // label10
@@ -140,49 +149,46 @@
             // 
             // TotalTextBox
             // 
-            this.TotalTextBox.Location = new System.Drawing.Point(117, 102);
+            this.TotalTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TotalTextBox.Location = new System.Drawing.Point(111, 168);
             this.TotalTextBox.Name = "TotalTextBox";
             this.TotalTextBox.ReadOnly = true;
-            this.TotalTextBox.Size = new System.Drawing.Size(142, 22);
+            this.TotalTextBox.Size = new System.Drawing.Size(154, 22);
             this.TotalTextBox.TabIndex = 19;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 102);
+            this.label11.Location = new System.Drawing.Point(13, 171);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 16);
             this.label11.TabIndex = 18;
             this.label11.Text = "Total a Pagar:";
             // 
-            // GuardarButton
-            // 
-            this.GuardarButton.Location = new System.Drawing.Point(848, 440);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(104, 44);
-            this.GuardarButton.TabIndex = 20;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
-            // 
             // CancelarButton
             // 
-            this.CancelarButton.Location = new System.Drawing.Point(958, 440);
+            this.CancelarButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelarButton.Image")));
+            this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CancelarButton.Location = new System.Drawing.Point(988, 482);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(104, 44);
             this.CancelarButton.TabIndex = 21;
             this.CancelarButton.Text = "Cancelar";
-            this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CancelarButton.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.NombreClienteTextBox);
             this.groupBox2.Controls.Add(this.BuscarClienteButton);
             this.groupBox2.Controls.Add(this.IdentidadTextBox);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(15, 108);
+            this.groupBox2.Location = new System.Drawing.Point(12, 151);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1062, 54);
             this.groupBox2.TabIndex = 22;
@@ -200,7 +206,7 @@
             // 
             // NombreClienteTextBox
             // 
-            this.NombreClienteTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.NombreClienteTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.NombreClienteTextBox.Location = new System.Drawing.Point(538, 21);
             this.NombreClienteTextBox.Name = "NombreClienteTextBox";
             this.NombreClienteTextBox.ReadOnly = true;
@@ -209,16 +215,19 @@
             // 
             // BuscarClienteButton
             // 
+            this.BuscarClienteButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BuscarClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BuscarClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarClienteButton.Image")));
             this.BuscarClienteButton.Location = new System.Drawing.Point(311, 22);
             this.BuscarClienteButton.Name = "BuscarClienteButton";
             this.BuscarClienteButton.Size = new System.Drawing.Size(30, 25);
             this.BuscarClienteButton.TabIndex = 5;
-            this.BuscarClienteButton.Text = "...";
-            this.BuscarClienteButton.UseVisualStyleBackColor = true;
+            this.BuscarClienteButton.UseVisualStyleBackColor = false;
             this.BuscarClienteButton.Click += new System.EventHandler(this.BuscarClienteButton_Click);
             // 
             // IdentidadTextBox
             // 
+            this.IdentidadTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.IdentidadTextBox.Location = new System.Drawing.Point(106, 23);
             this.IdentidadTextBox.Name = "IdentidadTextBox";
             this.IdentidadTextBox.Size = new System.Drawing.Size(200, 22);
@@ -235,27 +244,31 @@
             // 
             // PrecioTextBox
             // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(117, 62);
+            this.PrecioTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.PrecioTextBox.Location = new System.Drawing.Point(102, 62);
             this.PrecioTextBox.Name = "PrecioTextBox";
-            this.PrecioTextBox.Size = new System.Drawing.Size(142, 22);
+            this.PrecioTextBox.Size = new System.Drawing.Size(157, 22);
             this.PrecioTextBox.TabIndex = 23;
-            this.PrecioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioTextBox_KeyPress);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(111, 146);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(135, 105);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 34);
+            this.button1.Size = new System.Drawing.Size(99, 34);
             this.button1.TabIndex = 24;
             this.button1.Text = "Calcular";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox3.Controls.Add(this.TipoSoporteComboBox);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(15, 191);
+            this.groupBox3.Location = new System.Drawing.Point(12, 234);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(747, 65);
             this.groupBox3.TabIndex = 25;
@@ -264,13 +277,14 @@
             // 
             // TipoSoporteComboBox
             // 
+            this.TipoSoporteComboBox.BackColor = System.Drawing.SystemColors.Info;
             this.TipoSoporteComboBox.FormattingEnabled = true;
             this.TipoSoporteComboBox.Items.AddRange(new object[] {
             "Reparacion de Celulares",
             "Reparacion de Equipo de Computo"});
-            this.TipoSoporteComboBox.Location = new System.Drawing.Point(237, 26);
+            this.TipoSoporteComboBox.Location = new System.Drawing.Point(228, 26);
             this.TipoSoporteComboBox.Name = "TipoSoporteComboBox";
-            this.TipoSoporteComboBox.Size = new System.Drawing.Size(504, 24);
+            this.TipoSoporteComboBox.Size = new System.Drawing.Size(495, 24);
             this.TipoSoporteComboBox.TabIndex = 1;
             // 
             // label1
@@ -284,28 +298,30 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox4.Controls.Add(this.richTextBox1);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(15, 276);
+            this.groupBox4.Location = new System.Drawing.Point(12, 319);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(747, 104);
+            this.groupBox4.Size = new System.Drawing.Size(747, 77);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Descripción";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(237, 21);
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(228, 21);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(495, 66);
+            this.richTextBox1.Size = new System.Drawing.Size(495, 42);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 55);
+            this.label5.Location = new System.Drawing.Point(20, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(180, 16);
             this.label5.TabIndex = 0;
@@ -313,28 +329,30 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox5.Controls.Add(this.richTextBox2);
             this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(15, 397);
+            this.groupBox5.Location = new System.Drawing.Point(12, 440);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(747, 104);
+            this.groupBox5.Size = new System.Drawing.Size(747, 86);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Respuesta";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Location = new System.Drawing.Point(228, 21);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(504, 66);
+            this.richTextBox2.Size = new System.Drawing.Size(495, 48);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 43);
+            this.label6.Location = new System.Drawing.Point(33, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 16);
             this.label6.TabIndex = 0;
@@ -342,6 +360,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox6.Controls.Add(this.PrecioTextBox);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label10);
@@ -349,19 +368,67 @@
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.TotalTextBox);
-            this.groupBox6.Location = new System.Drawing.Point(818, 225);
+            this.groupBox6.Location = new System.Drawing.Point(803, 246);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(286, 197);
+            this.groupBox6.Size = new System.Drawing.Size(298, 206);
             this.groupBox6.TabIndex = 28;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Detalles";
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(842, 482);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(104, 44);
+            this.GuardarButton.TabIndex = 20;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = false;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(355, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(456, 52);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Generación de Ticek";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Vista.Properties.Resources.recibo1;
+            this.pictureBox1.Location = new System.Drawing.Point(817, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 71);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Vista.Properties.Resources.recibo1;
+            this.pictureBox2.Location = new System.Drawing.Point(282, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(71, 71);
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
             // 
             // FacturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1131, 530);
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ClientSize = new System.Drawing.Size(1131, 539);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -387,7 +454,10 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -422,5 +492,8 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

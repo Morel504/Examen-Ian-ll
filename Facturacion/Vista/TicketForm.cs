@@ -17,10 +17,10 @@ namespace Vista
         ClienteDB clienteDB = new ClienteDB();
         List<DetalleTicket> listaDetalles = new List<DetalleTicket>();
         TicketDB facturaDB = new TicketDB();
-        decimal subprecio = 0;
+        decimal precio = 0;
         decimal isv = 010;
         decimal totalAPagar = 0;
-        decimal subdescuentox = 0;
+        decimal descuento = 0;
 
 
 
@@ -35,7 +35,7 @@ namespace Vista
             miTicket.Fecha = FechaDateTimePicker.Value;
             miTicket.CodigoUsuario = System.Threading.Thread.CurrentPrincipal.Identity.Name;
             miTicket.ISV = isv;
-            miTicket.Descuento = subdescuentox;
+            miTicket.Descuento = descuento;
             miTicket.Total = totalAPagar;
 
             bool inserto = facturaDB.Guardar(miTicket, listaDetalles);
@@ -74,15 +74,17 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
+            precio = Convert.ToInt32(PrecioTextBox.Text);
+            descuento = Convert.ToInt32(DescuentoTextBox.Text);
+            Calculo();
         }
 
-        private void PrecioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void Calculo()
         {
-            subdescuentox = Convert.ToDecimal(DescuentoTextBox);
-            subprecio = Convert.ToDecimal(PrecioTextBox);
-            totalAPagar = subprecio - subdescuentox;
+            totalAPagar = precio - descuento;
+            TotalTextBox.Text = Convert.ToString(totalAPagar);
         }
+
     }
 }
